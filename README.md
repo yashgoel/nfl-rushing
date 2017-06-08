@@ -5,6 +5,8 @@ Solution to theScore's NFL problem
 
 Make sure you have Ruby and Rails installed 🙏
 
+Also, you would need to have a `rushing.json` file in the root directory of the repository for this to import the seed data correctly.
+
 1. Clone the GitHub repo and `cd`  into the repository
 2. `bundle install`
 3. `bundle update`
