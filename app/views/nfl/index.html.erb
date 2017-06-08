@@ -1,5 +1,10 @@
 <h1>NFL Statistics</h1>
 
+<%= form_tag('/', :method => "get", id: "search-form") do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Search Players" %>
+    <%= submit_tag "Search", :name => nil %>
+<% end %>
+
 <table>
   <thead>
     <tr>

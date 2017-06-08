@@ -3,6 +3,9 @@ class NflController < ApplicationController
 
   def index
     @players = Player.order("#{sort_column} #{sort_direction}")
+    if params[:search]
+      @players = Player.search(params[:search]).order("#{sort_column} #{sort_direction}")
+    end
   end
 
   private
