@@ -1,6 +1,6 @@
 <h1>NFL Statistics</h1>
 
-<%= form_tag('/', :method => "get", id: "search-form") do %>
+<%= form_tag(nfl_index_path, :method => "get", id: "search-form") do %>
     <%= text_field_tag :search, params[:search], placeholder: "Search Players" %>
     <%= submit_tag "Search", :name => nil %>
 <% end %>
@@ -8,21 +8,21 @@
 <table>
   <thead>
     <tr>
-      <th><%= sort_link "player", "Player" %></th>
-      <th><%= sort_link "team", "Team" %></th>
-      <th><%= sort_link "position", "Position" %></th>
-      <th><%= sort_link "avg_attempts_per_game", "Att/G" %></th>
-      <th><%= sort_link "total_attempts", "Att" %></th>
-      <th><%= sort_link "total_yards", "Yrds" %></th>
-      <th><%= sort_link "average_yards_per_attempt", "Avg" %></th>
-      <th><%= sort_link "yards_per_game", "Yrds/G" %></th>
-      <th><%= sort_link "total_touchdowns", "TD" %></th>
-      <th><%= sort_link "longest_rush", "Lng" %></th>
-      <th><%= sort_link "first_downs", "1st" %></th>
-      <th><%= sort_link "first_down_percentage", "1st%" %></th>
-      <th><%= sort_link "twenty_yards_plus_each", "20+" %></th>
-      <th><%= sort_link "forty_yards_plus_each", "40+" %></th>
-      <th><%= sort_link "fumbles", "FUM" %></th>
+      <th><%= sort_link "player", "Player", @search_query %></th>
+      <th><%= sort_link "team", "Team", @search_query  %></th>
+      <th><%= sort_link "position", "Position", @search_query  %></th>
+      <th><%= sort_link "avg_attempts_per_game", "Att/G", @search_query  %></th>
+      <th><%= sort_link "total_attempts", "Att", @search_query  %></th>
+      <th><%= sort_link "total_yards", "Yrds", @search_query  %></th>
+      <th><%= sort_link "average_yards_per_attempt", "Avg", @search_query  %></th>
+      <th><%= sort_link "yards_per_game", "Yrds/G", @search_query  %></th>
+      <th><%= sort_link "total_touchdowns", "TD", @search_query  %></th>
+      <th><%= sort_link "longest_rush", "Lng", @search_query  %></th>
+      <th><%= sort_link "first_downs", "1st", @search_query  %></th>
+      <th><%= sort_link "first_down_percentage", "1st%", @search_query  %></th>
+      <th><%= sort_link "twenty_yards_plus_each", "20+", @search_query  %></th>
+      <th><%= sort_link "forty_yards_plus_each", "40+", @search_query  %></th>
+      <th><%= sort_link "fumbles", "FUM", @search_query  %></th>
     </tr>
   </thead>
   <tbody>

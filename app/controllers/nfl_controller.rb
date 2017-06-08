@@ -2,23 +2,24 @@ class NflController < ApplicationController
   helper_method :sort_column, :sort_direction
 
   def index
-    @players = Player.order("#{sort_column} #{sort_direction}")
+    @players = Player.all
+    @search_query ||= params[:search]
     if params[:search]
-      @players = Player.search(params[:search]).order("#{sort_column} #{sort_direction}")
+        @players = Player.search(params[:search])
+    end
+
+    if sort_column and sort_direction
+      @players = @players.order(sort_column + " " + sort_direction)
     end
   end
 
   private
-    def sortable_columns
-      ["player", "team", "position", "avg_attempts_per_game", "total_attempts", "total_yards", "average_yards_per_attempt", "yards_per_game", "total_touchdowns", "longest_rush", "first_downs", "first_down_percentage", "twenty_yards_plus_each", "forty_yards_plus_each", "fumbles"]
-    end
-
     def sort_column
-      sortable_columns.include?(params[:column]) ? params[:column] : "player"
+      Player.column_names.include?(params[:column]) ? params[:column] : nil
     end
 
     def sort_direction
-      %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+      %w[asc desc].include?(params[:direction]) ? params[:direction] : nil
     end
 
 end
