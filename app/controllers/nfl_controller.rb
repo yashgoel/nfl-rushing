@@ -11,6 +11,11 @@ class NflController < ApplicationController
     if sort_column and sort_direction
       @players = @players.order(sort_column + " " + sort_direction)
     end
+
+    respond_to do |format|
+      format.html
+      format.csv { send_data @players.to_csv, filename: "users-#{Date.today}.csv" }
+    end
   end
 
   private

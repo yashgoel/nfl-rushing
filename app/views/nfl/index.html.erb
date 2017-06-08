@@ -5,6 +5,10 @@
     <%= submit_tag "Search", :name => nil %>
 <% end %>
 
+<br>
+<%= button_to "Export as CSV",  nfl_index_path(format: "csv"), method: :get %>
+<br>
+
 <table>
   <thead>
     <tr>
