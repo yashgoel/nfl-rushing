@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170606194907) do
+ActiveRecord::Schema.define(version: 20170608212146) do
 
   create_table "players", force: :cascade do |t|
     t.string   "player"
@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20170606194907) do
     t.float    "average_yards_per_attempt"
     t.float    "yards_per_game"
     t.integer  "total_touchdowns"
-    t.string   "longest_rush"
+    t.integer  "longest_rush"
     t.integer  "first_downs"
     t.float    "first_down_percentage"
     t.integer  "twenty_yards_plus_each"
