@@ -4,6 +4,8 @@ class NflController < ApplicationController
   def index
     @players = Player.all
     @search_query ||= params[:search]
+    @column_parameter ||= params[:column]
+    @direction_parameter ||= params[:direction]
     if params[:search]
         @players = Player.search(params[:search])
     end

@@ -6,7 +6,8 @@
 <% end %>
 
 <br>
-<%= button_to "Export as CSV",  nfl_index_path(format: "csv"), method: :get %>
+<%= link_to "Export as CSV",  nfl_index_path(format: "csv", direction: @direction_parameter, column: @column_parameter, search: @search_query) %>
+<br>
 <br>
 
 <table>
