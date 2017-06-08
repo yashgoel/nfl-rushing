@@ -1,40 +1,44 @@
 <h1>NFL Statistics</h1>
 
 <table>
-  <tr>
-    <th>Player</th>
-    <th>Team</th>
-    <th>Pos</th>
-    <th>Att/G</th>
-    <th>Att</th>
-    <th>Yrds</th>
-    <th>Avg</th>
-    <th>Yds/G</th>
-    <th>TD</th>
-    <th>Lng</th>
-    <th>1st</th>
-    <th>1st%</th>
-    <th>20+</th>
-    <th>40+</th>
-    <th>FUM</th>
-  </tr>
-
-  <% @players.each do |p| %>
+  <thead>
     <tr>
-      <td><%= p.player %></td>
-      <td><%= p.team %></td>
-      <td><%= p.position %></td>
-      <td><%= p.avg_attempts_per_game %></td>
-      <td><%= p.total_attempts %></td>
-      <td><%= p.total_yards %></td>
-      <td><%= p.average_yards_per_attempt %></td>
-      <td><%= p.yards_per_game %></td>
-      <td><%= p.total_touchdowns %></td>
-      <td><%= p.longest_rush %></td>
-      <td><%= p.first_downs %></td>
-      <td><%= p.first_down_percentage %></td>
-      <td><%= p.twenty_yards_plus_each %></td>
-      <td><%= p.forty_yards_plus_each %></td>
-      <td><%= p.fumbles %></td>
+      <th><%= sort_link "player", "Player" %></th>
+      <th><%= sort_link "team", "Team" %></th>
+      <th><%= sort_link "position", "Position" %></th>
+      <th><%= sort_link "avg_attempts_per_game", "Att/G" %></th>
+      <th><%= sort_link "total_attempts", "Att" %></th>
+      <th><%= sort_link "total_yards", "Yrds" %></th>
+      <th><%= sort_link "average_yards_per_attempt", "Avg" %></th>
+      <th><%= sort_link "yards_per_game", "Yrds/G" %></th>
+      <th><%= sort_link "total_touchdowns", "TD" %></th>
+      <th><%= sort_link "longest_rush", "Lng" %></th>
+      <th><%= sort_link "first_downs", "1st" %></th>
+      <th><%= sort_link "first_down_percentage", "1st%" %></th>
+      <th><%= sort_link "twenty_yards_plus_each", "20+" %></th>
+      <th><%= sort_link "forty_yards_plus_each", "40+" %></th>
+      <th><%= sort_link "fumbles", "FUM" %></th>
     </tr>
-  <% end %>
+  </thead>
+  <tbody>
+    <% @players.each do |p| %>
+      <tr>
+        <td><%= p.player %></td>
+        <td><%= p.team %></td>
+        <td><%= p.position %></td>
+        <td><%= p.avg_attempts_per_game %></td>
+        <td><%= p.total_attempts %></td>
+        <td><%= p.total_yards %></td>
+        <td><%= p.average_yards_per_attempt %></td>
+        <td><%= p.yards_per_game %></td>
+        <td><%= p.total_touchdowns %></td>
+        <td><%= p.longest_rush %></td>
+        <td><%= p.first_downs %></td>
+        <td><%= p.first_down_percentage %></td>
+        <td><%= p.twenty_yards_plus_each %></td>
+        <td><%= p.forty_yards_plus_each %></td>
+        <td><%= p.fumbles %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
